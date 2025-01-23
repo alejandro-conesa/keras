@@ -31,7 +31,7 @@ salida_2neuronas = modelo_2neuronas(tensor)
 salida_multiclase = modelo_multiclase(tensor)
 salida_multietiqueta = modelo_multietiqueta(tensor)
 
-print(f'Binaria una neurona - Clase {"0" if salida_1neurona > 0.5 else "0"}')
+print(f'Binaria una neurona - Clase {"0" if salida_1neurona > 0.5 else "1"}')
 print(f'Binaria dos neurona - Clase {tf.argmax(salida_2neuronas, axis =-1)}')
 print(f'Multiclase - Clase {tf.argmax(salida_multiclase, axis =-1)}')
 print(f'Multietiqueta - Clase {tf.where(salida_multietiqueta[0] > 0.5)[:, 0]}')
